@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#171717">
+
+    <title>Sketch Reveal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- ENCABEZADO -->
+        <header>
+            <h1>SKETCH REVEAL</h1>
+            <p>A picture revealed through strokes.</p>
+        </header>
+
+        <!-- LIENZO Y MENSAJES -->
+        <section class="reveal-layout">
+
+            <div id="leftMessage" class="side-message">
+                <p></p>
+            </div>
+
+            <section class="drawing-area">
+
+                <canvas id="sketchCanvas"></canvas>
+
+                <div id="placeholder" class="placeholder">
+                    <span>✎</span>
+                    <p>Your canvas awaits...</p>
+                </div>
+
+            </section>
+
+            <div id="rightMessage" class="side-message">
+                <p></p>
+            </div>
+
+        </section>
+
+        <!-- NAVEGACIÓN ENTRE IMÁGENES -->
+        <section class="image-navigation">
+
+            <button
+                type="button"
+                id="prevButton"
+                aria-label="Previous image"
+                disabled
+            >
+                &#10094;
+            </button>
+
+            <div class="image-counter">
+                <span id="currentImage">01</span>
+                <span class="separator">/</span>
+                <span id="totalImages">06</span>
+            </div>
+
+            <button
+                type="button"
+                id="nextButton"
+                aria-label="Next image"
+            >
+                &#10095;
+            </button>
+
+        </section>
+
+        <!-- CONTROLES -->
+        <section class="controls">
+
+            <button type="button" id="revealButton">
+                <span>✧</span> REVEAL PICTURE
+            </button>
+
+            <button
+                type="button"
+                id="resetButton"
+                disabled
+            >
+                RESTART
+            </button>
+
+            <div class="progress-container">
+                <div id="progressBar"></div>
+            </div>
+
+            <p id="status" aria-live="polite">
+                READY TO REVEAL
+            </p>
+
+        </section>
+
+        <!-- PIE DE PÁGINA -->
+        <footer>
+            MADE WITH CREATIVITY
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
