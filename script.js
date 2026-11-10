@@ -33,12 +33,11 @@ const imageFiles = [
 
 const imageMessages = [
     {
-        left: "",
-        right: `En este museo se conservan obras inspiradas en una antigua musa griega, una mujer cuya belleza habría fascinado a generaciones de artistas, todos intentando capturar aquello que la hacía extraordinaria.
+        left: `En este museo se conservan obras inspiradas en una antigua musa griega, una mujer cuya belleza habría fascinado a generaciones de artistas, todos intentando capturar aquello que la hacía extraordinaria.
 
-Nuestra primera interpretación es un Realismo pictórico clásico.
-
-El realismo clásico no necesita exagerar para conmover. Su belleza reside en la precisión, en las proporciones y en la paciencia de reproducir cada detalle.
+Nuestra primera interpretación es un Realismo pictórico clásico.`
+,
+        right: `El realismo clásico no necesita exagerar para conmover. Su belleza reside en la precisión, en las proporciones y en la paciencia de reproducir cada detalle.
 Esta obra recuerda a los grandes retratistas de otras épocas, aquellos que entendían que un buen retrato no consistía solamente en reproducir un rostro, sino en conservar algo de la esencia de quien posaba.
 
 Y si algo merece ser contemplado sin prisas, es precisamente aquello que el tiempo nunca debería llevarse.`
