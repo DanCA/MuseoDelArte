@@ -603,6 +603,40 @@ window.addEventListener("resize", () => {
     }
 });
 
+
+/* =====================================
+   ESCALADO AUTOMÁTICO RESPONSIVE
+===================================== */
+
+function adjustPageScale() {
+    const container = document.querySelector(".container");
+
+    if (!container) return;
+
+    const designWidth = 1100;
+    const availableWidth = window.innerWidth - 30;
+
+    const scale = Math.min(
+        1,
+        availableWidth / designWidth
+    );
+
+    container.style.setProperty(
+        "--page-scale",
+        scale
+    );
+}
+
+// Ejecutar al cargar
+window.addEventListener("load", adjustPageScale);
+
+// Recalcular al cambiar el tamaño
+window.addEventListener("resize", adjustPageScale);
+
+// Ejecutar inmediatamente
+adjustPageScale();
+
+
 // =====================================
 // INICIO
 // =====================================
