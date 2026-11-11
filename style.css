@@ -11,6 +11,8 @@
 
 body {
     min-height: 100vh;
+    min-width: 1100px;
+
     background: #171717;
     color: white;
     font-family: Arial, sans-serif;
@@ -20,11 +22,14 @@ body {
     align-items: center;
 
     padding: 30px 15px;
+    overflow-x: auto;
 }
 
 .container {
-    width: 100%;
+    width: 1100px;
+    min-width: 1100px;
     max-width: 1100px;
+
     text-align: center;
 }
 
@@ -56,7 +61,6 @@ header p {
 .reveal-layout {
     display: grid;
 
-    /* Espacio para mensaje - imagen - mensaje */
     grid-template-columns:
         minmax(0, 1fr)
         minmax(0, 2fr)
@@ -64,6 +68,7 @@ header p {
 
     align-items: center;
     gap: 24px;
+
     width: 100%;
 }
 
@@ -108,9 +113,9 @@ canvas {
     overflow-wrap: break-word;
 }
 
-    .side-message p {
-        white-space: pre-line ;
-    }
+.side-message p {
+    white-space: pre-line;
+}
 
 .side-message.visible {
     opacity: 1;
@@ -244,6 +249,9 @@ button:focus-visible {
     letter-spacing: 2px;
 
     border-radius: 3px;
+
+    width: auto;
+    max-width: none;
 }
 
 #revealButton:hover:not(:disabled) {
@@ -318,120 +326,49 @@ footer {
 }
 
 /* =====================================
-   TABLETS
+   DISEÑO DESKTOP EN TODOS LOS DISPOSITIVOS
 ===================================== */
 
-@media (max-width: 900px) {
-    .container {
-        max-width: 750px;
-    }
-
-    .reveal-layout {
-        gap: 12px;
-        grid-template-columns:
-            minmax(0, 0.8fr)
-            minmax(0, 2fr)
-            minmax(0, 0.8fr);
-    }
-
-    .side-message {
-        font-size: 13px;
-        padding: 6px;
-    }
+/* Mantiene las dimensiones de escritorio */
+body,
+.container {
+    min-width: 1100px;
 }
 
-/* =====================================
-   MÓVILES
-===================================== */
+/* Evita que los elementos cambien de distribución */
+.reveal-layout {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 2fr)
+        minmax(0, 1fr);
 
-@media (max-width: 700px) {
-
-    body {
-        align-items: flex-start;
-        padding: 25px 15px;
-    }
-
-    .container {
-        max-width: 480px;
-    }
-
-    header {
-        margin-bottom: 22px;
-    }
-
-    header h1 {
-        font-size: 23px;
-        letter-spacing: 4px;
-    }
-
-    header p {
-        font-size: 11px;
-    }
-
-    .reveal-layout {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .drawing-area {
-        width: 100%;
-        aspect-ratio: 3 / 4;
-        max-height: 70vh;
-    }
-
-    .side-message {
-        width: 100%;
-        font-size: 14px;
-        line-height: 1.7;
-        padding: 8px 15px;
-    }
-
-    .image-navigation {
-        margin-top: 18px;
-        gap: 30px;
-    }
-
-    .controls {
-        margin-top: 25px;
-    }
-
-    #revealButton {
-        width: 100%;
-        max-width: 300px;
-        padding: 16px 20px;
-    }
-
-    .progress-container {
-        width: 90%;
-    }
-
-    footer {
-        margin-top: 35px;
-    }
+    gap: 24px;
 }
 
-/* =====================================
-   MÓVILES PEQUEÑOS
-===================================== */
-
-@media (max-width: 380px) {
-
-    header h1 {
-        font-size: 20px;
-        letter-spacing: 3px;
-    }
-
-    .drawing-area {
-        aspect-ratio: 3 / 4;
-    }
-
-    .side-message {
-        font-size: 13px;
-    }
-
-    .image-navigation {
-        gap: 22px;
-    }
-
+/* Mantiene las proporciones de la imagen */
+.drawing-area {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    max-height: none;
 }
+
+/* Mantiene el formato de los mensajes */
+.side-message {
+    font-size: 15px;
+    line-height: 1.8;
+    padding: 12px;
+}
+
+/* Evita modificaciones en navegación */
+.image-navigation {
+    gap: 35px;
+    margin-top: 22px;
+}
+
+/* Mantiene el botón con dimensiones originales */
+#revealButton {
+    width: auto;
+    max-width: none;
+}
+
