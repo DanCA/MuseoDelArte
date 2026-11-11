@@ -613,7 +613,7 @@ function adjustPageScale() {
 
     if (!container) return;
 
-    const designWidth = 1100;
+    const designWidth = 1000;
     const availableWidth = window.innerWidth - 30;
 
     const scale = Math.min(
